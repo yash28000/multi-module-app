@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    image: backend:1.0.0
+    ports:
+      - "8084:8084"
+    networks:
+      - mynetwork
+
+  frontend:
+    build: ./frontend
+    image: frontend:1.0.0
+    ports:
+      - "8081:8080"
+    networks:
+      - mynetwork
+
+  frontend2:
+    build: ./frontend2
+    image: frontend2:1.0.0
+    ports:
+      - "8082:8080"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true
