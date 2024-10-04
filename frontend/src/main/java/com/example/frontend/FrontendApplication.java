@@ -10,8 +10,8 @@ public class FrontendApplication {
         context.setContextPath("/");
         server.setHandler(context);
 
-        // Register your existing servlet
-        context.addServlet(FrontendServlet.class, "/your-endpoint"); // Use the correct endpoint
+        // Register your servlet here
+        context.addServlet(FrontendServlet.class, "/hello"); // Specify the endpoint
 
         server.start();
         server.join();
